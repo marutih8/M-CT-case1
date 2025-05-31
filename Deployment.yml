@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: cont1
-          image: layareddy14/boardshack:latest
+          image: marutih8/my-app-name:latest
           ports:
             - containerPort: 8080 
