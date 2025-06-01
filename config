@@ -1,0 +1,29 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJVGVFTkhJM29xcUl3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TlRBMU16RXhNREV5TlRoYUZ3MHpOVEExTWpreE1ERTNOVGhhTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUUN6VUZYWjV0dGkwbXJvczRsNFAvTmJDdjhXTzd2Sk8wR1pUdVNTendPRGRFLzkyMzIweVowdURjRnMKWk83YjRXTkV1REJjckZZOVRCTjFycWg3QkFXSFJCc3FQVFVBbFpLV0w5a0xrR3U1bXBkZzQrRTBlbjBwb2IwNwpmNkF0cE5uTnZwY0pjSWNybXlEaDRVSEhicG43QVlJV3pWQ1NuekZKeGZiMHVpTjdvZmdPT0R0VHBDbnI2OHp4CkZ0cm1La0ZCTHRYSURCaXdBRVJtdjlsOWZHamEzcERCNC9BK1JCWEpkMktHbU5RbFZnTDRqckNWOVkzWEVLaUcKOTlVKzhFamdpdGM5WDRFTUhYSzNZMTBLRS80NFFqY2Q4QVF3NUQzMko3WjJDOE1nZDRtdWlIYXpoWFJkL3JFVAp1dVI2YlFtQWdaWk40SU4wZ2JvK1djQkxjQ2xiQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJTOGRqTFZ2b2tOQ01KVzg0SE54ZFhEWFc2dk9qQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQ3FlQ3lnRHoydAp1aW9USllhZ2Y1S2RUVWFBcjU0UDczTmdHa1dWSlQwWWhTQzlIaWZnWjZPSUhINDlTLzlIc3pKeTVLZUJHU09ZCkJiWHV5UDVCbW1ERVNxM1lxNTYwc0w5aTU3algyV3oycUpnUHAvWjJXMDNRdEdnRHIxbDg3Rk12bDhaQk1LcVAKbzFxb0lqbFVzSnY1aXErQjJTcDlCQTFsVHcrZUx1WHFMditORkFMYkwwUDJWd2hQQkF2a2toRUkwWXNNSmhuTQpCbDJmOGd2TGlXeUlNZVh4ZzdtdjRzL3pGWGFzc0QxRDY1WjBqbldUanYycFBRb0JnaHNlMFQrbmlwd3pWVy91Clp0Qnk3enV0NE1FMUV4MHlxbW5zWSs2TG9hUnU2TGdwK3FzaUVIUWFsTVVtVWdmK0QrUUdCVlorNGRTU0pLdEQKS0Z5VlBlNzZoOWNYCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    server: https://A8E79802AE7E1CBB1D552E6F540249BA.gr7.ap-south-1.eks.amazonaws.com
+  name: arn:aws:eks:ap-south-1:115690362228:cluster/my-cluster
+contexts:
+- context:
+    cluster: arn:aws:eks:ap-south-1:115690362228:cluster/my-cluster
+    user: arn:aws:eks:ap-south-1:115690362228:cluster/my-cluster
+  name: arn:aws:eks:ap-south-1:115690362228:cluster/my-cluster
+current-context: arn:aws:eks:ap-south-1:115690362228:cluster/my-cluster
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:ap-south-1:115690362228:cluster/my-cluster
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - --region
+      - ap-south-1
+      - eks
+      - get-token
+      - --cluster-name
+      - my-cluster
+      - --output
+      - json
+      command: aws
